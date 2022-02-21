@@ -16,6 +16,15 @@ class caminho:
 
 		# caminho
 		self.caminho = []
+	def ponto_ativo(self):
+		mouse_pos = pygame.mouse.get_pos()
+		row =  mouse_pos[1] // 32 # Posição exata do mouse na linha
+		col =  mouse_pos[0] // 32 # Posição exata do mouse na coluna
+		celula_atual = self.matrix[fila][col]
+		if celula_atual == 1:
+			rect = pygame.Rect((col * 32,fila * 32),(32,32))
+			screen.blit(self.select_surf,rect)
+	
 
 
 
