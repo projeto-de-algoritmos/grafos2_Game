@@ -44,17 +44,17 @@ class caminho:
 class Game(pygame.sprite.Sprite):
 	def _init_(self,sem_caminho):
 
-		# basic
+		# base
 		super()._init_()
 		self.image = pygame.image.load('img/roomba.png').convert_alpha()
 		self.retangulo = self.image.get_retangulo(center = (60,60))
 
-		# movement
+		# movimento
 		self.posicao = self.retangulo.center
 		self.velocidade = 3
 		self.direcao = pygame.math.Vector2(0,0)
 
-		# path
+		# caminho
 		self.caminho = []
 		self.retangulo_colisao = []
 		self.sem_caminho = empty_path
