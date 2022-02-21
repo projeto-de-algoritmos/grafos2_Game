@@ -40,6 +40,19 @@ class caminho:
 		finder = AStarFinder(DiagonalMovement = DiagonalMovement.always)
 		self.caminho,_ = finder.find_path(inicio,fim,self.grid)
 		self.grid.cleanup()
+	def verifica_colosao(self):
+		if self.colisao_retangulo:
+			for rect in self.colisao_retangulo:
+				if rect.collidepoint(self.pos):
+					del self.colisao_retangulo[0] # Remove o caminho quando alcança o objetivo
+					self.get_direcao()
+		else:
+			self.empty_path()
+
+	def Atualiza(self):
+		self.pos += self.direcao * self.velocidade
+		self.verifica_colosao()
+		self.rect.center = self.pos
 
 
 bg_surf = pygame.image.load('img/map.jpg').convert()
