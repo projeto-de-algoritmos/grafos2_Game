@@ -6,6 +6,17 @@ from pathfinding.core.diagonal_movement import DiagonalMovement
 pygame.init()
 screen = pygame.display.set_mode((1280,736))
 clock = pygame.time.Clock()
+class caminho:
+	def __init__(self,matriz):
+
+		# base
+		self.matriz = matriz
+		self.grid = Grid(matrix = matriz)
+		self.select_surf = pygame.image.load('img/mouse.png').convert_alpha()
+
+		# caminho
+		self.caminho = []
+
 
 
 bg_surf = pygame.image.load('img/map.jpg').convert()
