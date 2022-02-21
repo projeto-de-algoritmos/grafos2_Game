@@ -25,7 +25,21 @@ class caminho:
 			rect = pygame.Rect((col * 32,fila * 32),(32,32))
 			screen.blit(self.select_surf,rect)
 	
+	def cria_rastro(self):
 
+		# inicio
+		inicio_x, inicio_y = self.roomba.sprite.get_coord()
+		inicio = self.grid.node(inicio_x,inicio_y)
+
+		# fim
+		mouse_pos = pygame.mouse.get_pos()
+		fim_x,fim_y =  mouse_pos[0] // 32, mouse_pos[1] // 32
+		fim = self.grid.node(fim_x,fim_y)
+
+		# o caminho é recalculado a cada click
+		finder = AStarFinder(DiagonalMovement = DiagonalMovement.always)
+		self.caminho,_ = finder.find_path(inicio,fim,self.grid)
+		self.grid.cleanup()
 
 
 bg_surf = pygame.image.load('img/map.jpg').convert()
