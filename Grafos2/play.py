@@ -40,20 +40,52 @@ class caminho:
 		finder = AStarFinder(DiagonalMovement = DiagonalMovement.always)
 		self.caminho,_ = finder.find_path(inicio,fim,self.grid)
 		self.grid.cleanup()
-	def verifica_colosao(self):
-		if self.colisao_retangulo:
-			for rect in self.colisao_retangulo:
-				if rect.collidepoint(self.pos):
-					del self.colisao_retangulo[0] # Remove o caminho quando alcança o objetivo
-					self.get_direcao()
+		
+class Game(pygame.sprite.Sprite):
+	def _init_(self,sem_caminho):
+
+		# basic
+		super()._init_()
+		self.image = pygame.image.load('img/roomba.png').convert_alpha()
+		self.retangulo = self.image.get_retangulo(center = (60,60))
+
+		# movement
+		self.posicao = self.retangulo.center
+		self.velocidade = 3
+		self.direcao = pygame.math.Vector2(0,0)
+
+		# path
+		self.caminho = []
+		self.retangulo_colisao = []
+		self.sem_caminho = empty_path
+
+	def get_coord(self): #Transforma a posição atual em uma coordenada
+		col = self.retangulo.centerx // 32
+		row = self.retangulo.centery // 32
+		return (col,fila)
+
+	def set_path(self,caminho):
+		self.caminho = caminho
+		self.cria_colisao_retangulo()
+		self.get_direcao()
+
+	def cria_colisao_retangulo(self): # Identificando colisão no mapa
+		if self.caminho:
+			self.colisao_retangulo = []
+			for point in self.path:
+				x = (point[0] * 32) + 16
+				y = (point[1] * 32) + 16
+				retangulo = pygame.Rect((x - 2,y - 2),(4,4))
+				self.collision_rects.append(retangulo)
+
+	def get_direction(self):
+		if self.collision_rects:
+			inicio = pygame.math.Vector2(self.pos)
+			fim = pygame.math.Vector2(self.collision_rects[0].center)
+			self.direcao = (fim - inicio).normalize()
 		else:
-			self.empty_path()
-
-	def Atualiza(self):
-		self.pos += self.direcao * self.velocidade
-		self.verifica_colosao()
-		self.rect.center = self.pos
-
+			self.direcao = pygame.math.Vector2(0,0)
+			self.caminho = []
 
 bg_surf = pygame.image.load('img/map.jpg').convert()
 
