@@ -2,6 +2,8 @@ import pygame, sys
 from pathfinding.core.grid import Grid
 from pathfinding.finder.a_star import AStarFinder
 from pathfinding.core.diagonal_movement import DiagonalMovement
+import dijskara as dj
+
 
 class Pathfinder:
 	def __init__(self,matriz):
