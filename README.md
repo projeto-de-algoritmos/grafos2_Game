@@ -16,7 +16,7 @@ Temas:
 | 20/0043111  | Ricardo de Castro Loureiro |
 
 ## Sobre 
-O projeto tem como objetivo a implementação do algoritmo Dijkstra. Criamos um mapa com possiveis caminhos que o personagem pode andar. Selecionado o destino o algoritmo irá traçar a menor rota entre a origemm e destino
+O projeto tem como objetivo a implementação do algoritmo Dijkstra. Criamos um mapa com possiveis caminhos que o personagem pode andar. Selecionado o destino o algoritmo irá traçar a menor rota entre a origem e destino, desviando de obstáculos.
 
 ## Screenshots
 ![Sem título](https://user-images.githubusercontent.com/83254747/155052510-bd390d07-b9ae-4b3b-a2ae-fc4f9c6fd762.png)
