@@ -1,45 +1,50 @@
-**!! Atenção: Renomeie o seu repositório para (Tema)_(NomeDoProjeto). !!** 
+Grafos2_GameRunner
 
 Temas:
- - Grafos1
  - Grafos2
- - PD
- - D&C
- - Greed
- - Final 
  
- **!! *Não coloque os nomes dos alunos no título do repositório*. Exemplo de título correto: Grafos2_Labirinto-do-Minotauro !!**
- 
- (Apague essa seção)
 
 # NomedoProjeto
 
-**Número da Lista**: X<br>
-**Conteúdo da Disciplina**: XXXXXXXXXX<br>
+**Número da Lista**: 2<br>
+**Conteúdo da Disciplina**: Grafos2<br>
 
 ## Alunos
 |Matrícula | Aluno |
 | -- | -- |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| 19/0045485  |  Eduardo Gurgel Pereira de Carvalho |
+| 20/0043111  | Ricardo de Castro Loureiro |
 
 ## Sobre 
-Descreva os objetivos do seu projeto e como ele funciona. 
+O projeto tem como objetivo a implementação do algoritmo Dijkstra. Criamos um mapa com possiveis caminhos que o personagem pode andar. Selecionado o destino o algoritmo irá traçar a menor rota entre a origemm e destino
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+![Sem título](https://user-images.githubusercontent.com/83254747/155052510-bd390d07-b9ae-4b3b-a2ae-fc4f9c6fd762.png)
+![Sem título](https://user-images.githubusercontent.com/83254747/155052558-d83e5010-80e5-42e5-ae73-0f9b49a0eafa.png)
+
 
 ## Instalação 
-**Linguagem**: xxxxxx<br>
-**Framework**: (caso exista)<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
+**Linguagem**: Python<br>
+**Framework**: pygame, pathfinding<br>
+
+* Pré-requisitos:
+  * [Git](https://git-scm.com/)
+  * [Python3](https://www.python.org/)
+  * [pygame](https://www.pygame.org/news)
 
 ## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
 
-## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
-
-
-
-
+ * Clonar o repositório
+  ```
+  https://github.com/projeto-de-algoritmos/grafos2_Game.git
+  ```
+  
+  * Mudar para a pasta do repositório
+  ```
+  cd Grafos2_game/Grafos2
+  ```
+  
+ * Executar o projeto
+  ```
+  python play.py
+  ```
